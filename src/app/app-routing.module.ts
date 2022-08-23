@@ -3,13 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
-  // {
-  //   path: 'home',
-  //   loadChildren: () =>
-  //     import('./pages/home/home.module').then((m) => m.HomeModule),
-  //   canActivate: [AuthGuard],
-  //   canActivateChild: [AuthGuard],
-  // },
+  {
+    path: 'home',
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
+    // canActivate: [AuthGuard],
+    // canActivateChild: [AuthGuard],
+  },
   {
     path: 'login',
     loadChildren: () =>
