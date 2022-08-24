@@ -9,6 +9,11 @@ export interface CharData {
   ilvl: number;
   class: string;
 }
+export interface CharGroup {
+  name: string;
+  characters: CharData[];
+  color?: string;
+}
 
 @Component({
   selector: 'app-tranquil',
@@ -99,6 +104,13 @@ export class TranquilComponent implements OnInit {
     },
   ];
 
+  groups: CharGroup[] = [
+    {
+      name: 'DPS',
+      characters: [],
+    },
+  ];
+
   showClockface = false;
 
   constructor() {}
@@ -124,5 +136,16 @@ export class TranquilComponent implements OnInit {
 
   toggleClockface() {
     this.showClockface = !this.showClockface;
+  }
+
+  getCharacters() {
+    return this.characters.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  removeCharacter(name: string) {
+    const index = this.characters.findIndex((char) => char.name === name);
+    if (index >= 0) {
+      this.characters.splice(index, 1);
+    }
   }
 }

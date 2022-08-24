@@ -1,7 +1,7 @@
 .map-container {
-  width: auto;
+  width: 1080px;
   margin: 10px;
-  height: 85vh;
+  height: 900px;
   background-color: #a69e87;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   outline: #c5b769 10px solid;
@@ -35,7 +35,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 25%;
+  margin-top: 400px;
 }
 
 #clock {
@@ -45,7 +45,7 @@
   // margin-right: auto;
   // margin-top: -29%;
   width: 45%;
-  margin-left: 17.5%;
+  margin-left: 5%;
   margin-top: -24%;
   z-index: 0;
 }
@@ -53,10 +53,25 @@
 #boss {
   position: absolute;
   margin-top: -18%;
-  margin-left: 8%;
+  margin-left: 5%;
 }
 
 .custom-container {
   background-color: black;
   padding: 10px;
+}
+
+.panel-item {
+  padding: 10px;
+}
+
+.expansion-panel {
+  overflow-y: auto;
+  min-height: 50px;
+  max-height: 50%;
+}
+
+.button-w-icon {
+  display: flex;
+  align-content: center;
 }
