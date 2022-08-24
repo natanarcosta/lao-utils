@@ -99,6 +99,8 @@ export class TranquilComponent implements OnInit {
     },
   ];
 
+  showClockface = false;
+
   constructor() {}
 
   ngOnInit(): void {}
@@ -118,5 +120,9 @@ export class TranquilComponent implements OnInit {
         event.currentIndex
       );
     }
+  }
+
+  toggleClockface() {
+    this.showClockface = !this.showClockface;
   }
 }

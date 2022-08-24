@@ -1,5 +1,6 @@
 .map-container {
   width: auto;
+  margin: 10px;
   height: 80vh;
   background-color: #a69e87;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -21,6 +22,7 @@
   cursor: pointer;
   margin: 10px;
   background-color: rgba(255, 255, 255, 0.5);
+  z-index: 1;
 }
 
 .char-container {
@@ -30,10 +32,31 @@
 }
 
 #tree {
-  width: 5%;
-  //   margin-left: 45%;
-  //   margin-top: 30%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 25%;
+}
+
+#clock {
   position: absolute;
-  left: 45%;
-  top: 40%;
+  // display: block;
+  // margin-left: auto;
+  // margin-right: auto;
+  // margin-top: -29%;
+  width: 45%;
+  margin-left: 17.5%;
+  margin-top: -24%;
+  z-index: 0;
+}
+
+#boss {
+  position: absolute;
+  margin-top: -18%;
+  margin-left: 8%;
+}
+
+.custom-container {
+  background-color: black;
+  padding: 10px;
 }
