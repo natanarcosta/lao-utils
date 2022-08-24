@@ -1,7 +1,21 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-10">10</div>
-    <div class="col-2">2</div>
+    <div class="col">
+      <div class="map-container">
+        <div><img src="../../../assets/tree.svg" id="tree" /></div>
+        <div *ngIf="characters.length" class="char-container">
+          <div
+            *ngFor="let char of characters"
+            class="char-widget"
+            cdkDrag
+            cdkDragBoundary=".map-container"
+          >
+            <div>
+              <p>{{ char.name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="row justify-content-center">Footer</div>
 </div>

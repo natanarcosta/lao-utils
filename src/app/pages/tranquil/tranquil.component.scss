@@ -1,0 +1,39 @@
+.map-container {
+  width: auto;
+  height: 80vh;
+  background-color: #a69e87;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  outline: #c5b769 10px solid;
+  border: #908f7c 10px solid;
+  border-radius: 20%;
+}
+
+.char-widget {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 5;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  cursor: pointer;
+  margin: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.char-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+#tree {
+  width: 5%;
+  //   margin-left: 45%;
+  //   margin-top: 30%;
+  position: absolute;
+  left: 45%;
+  top: 40%;
+}

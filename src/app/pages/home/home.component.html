@@ -1,1 +1,38 @@
-<router-outlet></router-outlet>
+<mat-toolbar>
+  <button mat-icon-button (click)="snav.toggle()" style="position: absolute">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <div class="row justify-content-center" style="width: 100vw">
+    <div class="col-6 align-self-center">
+      <div class="col-auto align-self-center">
+        <img class="toolbar-logo" src="" />
+      </div>
+    </div>
+  </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+    #snav
+    mode="over"
+    fixedInViewport="true"
+    fixedTopGap="56"
+    disableClose="false"
+    class="custom-sidenav"
+  >
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/home/tranquil']" (click)="snav.close()"
+        ><mat-icon>payments</mat-icon> Tranquil</a
+      >
+      <hr />
+      <a mat-list-item [routerLink]="['/home/argos']" (click)="snav.close()"
+        ><mat-icon>list</mat-icon> Argos</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  >
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
