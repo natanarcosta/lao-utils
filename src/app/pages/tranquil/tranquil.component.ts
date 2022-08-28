@@ -1,13 +1,22 @@
 import {
+  CdkDrag,
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { AddCharactersComponent } from 'src/app/shared/dialog/add-characters/add-characters.component';
 export interface CharData {
   name: string;
-  ilvl: number;
-  class: string;
+  ilvl?: number;
+  class?: string;
 }
 export interface CharGroup {
   name: string;
@@ -20,7 +29,10 @@ export interface CharGroup {
   templateUrl: './tranquil.component.html',
   styleUrls: ['./tranquil.component.scss'],
 })
-export class TranquilComponent implements OnInit {
+export class TranquilComponent implements OnInit, AfterViewInit {
+  @ViewChild('charContainer')
+  charContainer!: ElementRef;
+
   characters: CharData[] = [
     {
       name: 'Hinatsoru',
@@ -111,11 +123,15 @@ export class TranquilComponent implements OnInit {
     },
   ];
 
+  widgets: CdkDrag[] = [];
+
   showClockface = false;
 
-  constructor() {}
+  constructor(private readonly dialog: MatDialog) {}
 
   ngOnInit(): void {}
+
+  ngAfterViewInit(): void {}
 
   drop(event: any) {
     if (event.previousContainer === event.container) {
@@ -140,6 +156,19 @@ export class TranquilComponent implements OnInit {
 
   getCharacters() {
     return this.characters.sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  addCharacters() {
+    this.dialog
+      .open(AddCharactersComponent, { width: '50%' })
+      .afterClosed()
+      .subscribe((data) => {
+        if (data) {
+          data.split(',').forEach((charName: string) => {
+            this.characters.push({ name: charName });
+          });
+        }
+      });
   }
 
   removeCharacter(name: string) {

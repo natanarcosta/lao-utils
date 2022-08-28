@@ -14,7 +14,7 @@
             *ngIf="showClockface"
           />
         </div>
-        <div *ngIf="characters.length" class="char-container">
+        <div *ngIf="characters.length" class="char-container" #charContainer>
           <div
             *ngFor="let char of characters"
             class="char-widget"
@@ -37,7 +37,10 @@
             </mat-expansion-panel-header>
             <div class="row justify-content-center">
               <div class="col-auto">
-                <button class="btn btn-primary button-w-icon">
+                <button
+                  class="btn btn-primary button-w-icon"
+                  (click)="addCharacters()"
+                >
                   <mat-icon>person</mat-icon> - Adicionar Personagens
                 </button>
               </div>
