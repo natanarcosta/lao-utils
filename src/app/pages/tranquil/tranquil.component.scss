@@ -10,8 +10,8 @@
 }
 
 .char-widget {
-  width: 85px;
-  height: 85px;
+  width: 65px;
+  height: 65px;
   border-radius: 50%;
   text-align: center;
   line-height: 5;
@@ -35,7 +35,10 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 400px;
+  margin-top: 22%;
+  border: 1px black solid;
+  border-radius: 50%;
+  padding: 150px;
 }
 
 #clock {
@@ -45,12 +48,13 @@
   // margin-right: auto;
   // margin-top: -29%;
   width: 45%;
-  margin-left: 5%;
-  margin-top: -24%;
+  margin-left: 5.3%;
+  margin-top: -31%;
   z-index: 0;
 }
 
 #boss {
+  display: none;
   position: absolute;
   margin-top: -18%;
   margin-left: 5%;
